@@ -185,107 +185,115 @@ ALTER TABLE ONLY public.students ALTER COLUMN student_id SET DEFAULT nextval('pu
 -- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.courses VALUES (1, 'Data Structures and Algorithms');
-INSERT INTO public.courses VALUES (2, 'Web Programming');
-INSERT INTO public.courses VALUES (3, 'Database Systems');
-INSERT INTO public.courses VALUES (4, 'Computer Networks');
-INSERT INTO public.courses VALUES (5, 'SQL');
-INSERT INTO public.courses VALUES (6, 'Machine Learning');
-INSERT INTO public.courses VALUES (7, 'Computer Systems');
-INSERT INTO public.courses VALUES (8, 'Web Applications');
-INSERT INTO public.courses VALUES (9, 'Artificial Intelligence');
-INSERT INTO public.courses VALUES (10, 'Python');
-INSERT INTO public.courses VALUES (11, 'Object-Oriented Programming');
-INSERT INTO public.courses VALUES (12, 'Calculus');
-INSERT INTO public.courses VALUES (13, 'Game Architecture');
-INSERT INTO public.courses VALUES (14, 'Algorithms');
-INSERT INTO public.courses VALUES (15, 'UNIX');
-INSERT INTO public.courses VALUES (16, 'Server Administration');
-INSERT INTO public.courses VALUES (17, 'Network Security');
+COPY public.courses (course_id, course) FROM stdin;
+1	Data Structures and Algorithms
+2	Web Programming
+3	Database Systems
+4	Computer Networks
+5	SQL
+6	Machine Learning
+7	Computer Systems
+8	Web Applications
+9	Artificial Intelligence
+10	Python
+11	Object-Oriented Programming
+12	Calculus
+13	Game Architecture
+14	Algorithms
+15	UNIX
+16	Server Administration
+17	Network Security
+\.
 
 
 --
 -- Data for Name: majors; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.majors VALUES (64, 'Database Administration');
-INSERT INTO public.majors VALUES (65, 'Web Development');
-INSERT INTO public.majors VALUES (66, 'Data Science');
-INSERT INTO public.majors VALUES (67, 'Network Engineering');
-INSERT INTO public.majors VALUES (68, 'Computer Programming');
-INSERT INTO public.majors VALUES (69, 'Game Design');
-INSERT INTO public.majors VALUES (70, 'System Administration');
+COPY public.majors (major_id, major) FROM stdin;
+1	Database Administration
+2	Web Development
+3	Data Science
+4	Network Engineering
+5	Computer Programming
+6	Game Design
+7	System Administration
+\.
 
 
 --
 -- Data for Name: majors_courses; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.majors_courses VALUES (64, 1);
-INSERT INTO public.majors_courses VALUES (65, 2);
-INSERT INTO public.majors_courses VALUES (64, 3);
-INSERT INTO public.majors_courses VALUES (66, 1);
-INSERT INTO public.majors_courses VALUES (67, 4);
-INSERT INTO public.majors_courses VALUES (64, 5);
-INSERT INTO public.majors_courses VALUES (66, 6);
-INSERT INTO public.majors_courses VALUES (67, 7);
-INSERT INTO public.majors_courses VALUES (68, 4);
-INSERT INTO public.majors_courses VALUES (64, 8);
-INSERT INTO public.majors_courses VALUES (69, 9);
-INSERT INTO public.majors_courses VALUES (66, 10);
-INSERT INTO public.majors_courses VALUES (68, 11);
-INSERT INTO public.majors_courses VALUES (70, 7);
-INSERT INTO public.majors_courses VALUES (69, 12);
-INSERT INTO public.majors_courses VALUES (65, 1);
-INSERT INTO public.majors_courses VALUES (66, 12);
-INSERT INTO public.majors_courses VALUES (65, 11);
-INSERT INTO public.majors_courses VALUES (69, 13);
-INSERT INTO public.majors_courses VALUES (70, 4);
-INSERT INTO public.majors_courses VALUES (69, 14);
-INSERT INTO public.majors_courses VALUES (70, 15);
-INSERT INTO public.majors_courses VALUES (70, 16);
-INSERT INTO public.majors_courses VALUES (68, 7);
-INSERT INTO public.majors_courses VALUES (68, 10);
-INSERT INTO public.majors_courses VALUES (67, 17);
-INSERT INTO public.majors_courses VALUES (65, 8);
-INSERT INTO public.majors_courses VALUES (67, 14);
+COPY public.majors_courses (major_id, course_id) FROM stdin;
+1	1
+2	2
+1	3
+3	1
+4	4
+1	5
+3	6
+4	7
+5	4
+1	8
+6	9
+3	10
+5	11
+7	7
+6	12
+2	1
+3	12
+2	11
+6	13
+7	4
+6	14
+7	15
+7	16
+5	7
+5	10
+4	17
+2	8
+4	14
+\.
 
 
 --
 -- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.students VALUES (130, 'Rhea', 'Kellems', 64, 2.5);
-INSERT INTO public.students VALUES (131, 'Emma', 'Gilbert', NULL, NULL);
-INSERT INTO public.students VALUES (132, 'Kimberly', 'Whitley', 65, 3.8);
-INSERT INTO public.students VALUES (133, 'Jimmy', 'Felipe', 64, 3.7);
-INSERT INTO public.students VALUES (134, 'Kyle', 'Stimson', NULL, 2.8);
-INSERT INTO public.students VALUES (135, 'Casares', 'Hijo', 69, 4.0);
-INSERT INTO public.students VALUES (136, 'Noe', 'Savage', NULL, 3.6);
-INSERT INTO public.students VALUES (137, 'Sterling', 'Boss', 69, 3.9);
-INSERT INTO public.students VALUES (138, 'Brian', 'Davis', NULL, 2.3);
-INSERT INTO public.students VALUES (139, 'Kaija', 'Uronen', 69, 3.7);
-INSERT INTO public.students VALUES (140, 'Faye', 'Conn', 69, 2.1);
-INSERT INTO public.students VALUES (141, 'Efren', 'Reilly', 65, 3.9);
-INSERT INTO public.students VALUES (142, 'Danh', 'Nhung', NULL, 2.4);
-INSERT INTO public.students VALUES (143, 'Maxine', 'Hagenes', 64, 2.9);
-INSERT INTO public.students VALUES (144, 'Larry', 'Saunders', 66, 2.2);
-INSERT INTO public.students VALUES (145, 'Karl', 'Kuhar', 65, NULL);
-INSERT INTO public.students VALUES (146, 'Lieke', 'Hazenveld', 69, 3.5);
-INSERT INTO public.students VALUES (147, 'Obie', 'Hilpert', 65, NULL);
-INSERT INTO public.students VALUES (148, 'Peter', 'Booysen', NULL, 2.9);
-INSERT INTO public.students VALUES (149, 'Nathan', 'Turner', 64, 3.3);
-INSERT INTO public.students VALUES (150, 'Gerald', 'Osiki', 66, 2.2);
-INSERT INTO public.students VALUES (151, 'Vanya', 'Hassanah', 69, 4.0);
-INSERT INTO public.students VALUES (152, 'Roxelana', 'Florescu', 64, 3.2);
-INSERT INTO public.students VALUES (153, 'Helene', 'Parker', 66, 3.4);
-INSERT INTO public.students VALUES (154, 'Mariana', 'Russel', 65, 1.8);
-INSERT INTO public.students VALUES (155, 'Ajit', 'Dhungel', NULL, 3.0);
-INSERT INTO public.students VALUES (156, 'Mehdi', 'Vandenberghe', 64, 1.9);
-INSERT INTO public.students VALUES (157, 'Dejon', 'Howell', 65, 4.0);
-INSERT INTO public.students VALUES (158, 'Aliya', 'Gulgowski', 70, 2.6);
-INSERT INTO public.students VALUES (159, 'Ana', 'Tupajic', 66, 3.1);
-INSERT INTO public.students VALUES (160, 'Hugo', 'Duran', NULL, 3.8);
+COPY public.students (student_id, first_name, last_name, major_id, gpa) FROM stdin;
+1	Rhea	Kellems	1	2.5
+2	Emma	Gilbert	\N	\N
+3	Kimberly	Whitley	2	3.8
+4	Jimmy	Felipe	1	3.7
+5	Kyle	Stimson	\N	2.8
+6	Casares	Hijo	6	4.0
+7	Noe	Savage	\N	3.6
+8	Sterling	Boss	6	3.9
+9	Brian	Davis	\N	2.3
+10	Kaija	Uronen	6	3.7
+11	Faye	Conn	6	2.1
+12	Efren	Reilly	2	3.9
+13	Danh	Nhung	\N	2.4
+14	Maxine	Hagenes	1	2.9
+15	Larry	Saunders	3	2.2
+16	Karl	Kuhar	2	\N
+17	Lieke	Hazenveld	6	3.5
+18	Obie	Hilpert	2	\N
+19	Peter	Booysen	\N	2.9
+20	Nathan	Turner	1	3.3
+21	Gerald	Osiki	3	2.2
+22	Vanya	Hassanah	6	4.0
+23	Roxelana	Florescu	1	3.2
+24	Helene	Parker	3	3.4
+25	Mariana	Russel	2	1.8
+26	Ajit	Dhungel	\N	3.0
+27	Mehdi	Vandenberghe	1	1.9
+28	Dejon	Howell	2	4.0
+29	Aliya	Gulgowski	7	2.6
+30	Ana	Tupajic	3	3.1
+31	Hugo	Duran	\N	3.8
+\.
 
 
 --
@@ -299,14 +307,14 @@ SELECT pg_catalog.setval('public.courses_course_id_seq', 17, true);
 -- Name: majors_major_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.majors_major_id_seq', 70, true);
+SELECT pg_catalog.setval('public.majors_major_id_seq', 7, true);
 
 
 --
 -- Name: students_student_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.students_student_id_seq', 160, true);
+SELECT pg_catalog.setval('public.students_student_id_seq', 31, true);
 
 
 --
